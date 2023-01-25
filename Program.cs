@@ -27,6 +27,9 @@
 Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
 int a = UserInput();
 
+bool Polindrom(int a)
+{
+
 if (a < 0)
     a *= (-1);
 
@@ -39,7 +42,9 @@ else
     else
         Console.WriteLine("Нет");
 }
-
+return a;
+}
+System.Console.WriteLine(Polindrom(a));
 
 
 
