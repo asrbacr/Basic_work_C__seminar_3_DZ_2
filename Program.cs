@@ -30,20 +30,28 @@ int a = UserInput();
 bool Polindrom(int a)
 {
 
-if (a < 0)
-    a *= (-1);
+    if (a < 0)
+        a *= (-1);
 
-if (!(a > 9999 && a < 100000))
-    Console.WriteLine("Придётся выбрать задачу заново, т.к. число не пятизначное");
-else
-{
-    if (a % 10 == a / 10000 && (a / 1000) % 10 == (a % 100) / 10)
-        Console.WriteLine("да");
+    if (!(a > 9999 && a < 100000))
+        return Console.WriteLine("Придётся выбрать задачу заново, т.к. число не пятизначное");
     else
-        Console.WriteLine("Нет");
+    {
+        if (a % 10 == a / 10000 && (a / 1000) % 10 == (a % 100) / 10)
+        {
+            return Console.WriteLine("да");
+
+        }
+        else
+        {
+            return Console.WriteLine("Нет");
+
+        }
+    }
+
 }
-return a;
-}
+
+
 System.Console.WriteLine(Polindrom(a));
 
 
