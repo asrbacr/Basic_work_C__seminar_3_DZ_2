@@ -27,32 +27,34 @@
 Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
 int a = UserInput();
 
-bool Polindrom(int a)
-{
+Polindrom(a);
 
+void Polindrom(int a)
+{
     if (a < 0)
         a *= (-1);
 
     if (!(a > 9999 && a < 100000))
-        return Console.WriteLine("Придётся выбрать задачу заново, т.к. число не пятизначное");
+    {
+        Console.WriteLine("Придётся выбрать задачу заново, т.к. число не пятизначное");
+    }
     else
     {
         if (a % 10 == a / 10000 && (a / 1000) % 10 == (a % 100) / 10)
         {
-            return Console.WriteLine("да");
-
+            {
+                Console.WriteLine("да");
+            }
         }
         else
         {
-            return Console.WriteLine("Нет");
-
+            Console.WriteLine("Нет");
         }
     }
-
 }
 
 
-System.Console.WriteLine(Polindrom(a));
+
 
 
 
@@ -81,3 +83,4 @@ int UserInput()
 
     return number;
 }
+
