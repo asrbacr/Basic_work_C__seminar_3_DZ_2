@@ -1,6 +1,6 @@
-﻿Console.Write("Введите номер задачи для проверки: ");
+﻿// Console.Write("Введите номер задачи для проверки: ");
 
-int a = UserInput();
+// int a = UserInput();
 
 // switch (a)
 // {
@@ -36,6 +36,15 @@ int a = UserInput();
 //     Console.Write($"Таблица кубов числа {a}-> ");
 //     TryTable(a);
 //     break;
+
+// case 25:
+// Console.Write("Введите число, которое будем возводить в степень: ");
+// int a = UserInput();
+// Console.Write($"Введите степерь в которую будем возводить число {a}: ");
+// int b = UserInput();
+
+// Console.WriteLine($"Ответ: {a} ^ {b} = {PowNumber(a, b).ToString("### ### ### ###")}");
+// break;
 
 // default:
 //     Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21 или 23.");
@@ -101,14 +110,10 @@ void TryTable(int N)
 int PowNumber (int Num, int Degree)
 {
     int res = 1;
-    for (int i = 1; i < Degree; i++)
+    for (int i = 1; i <= Degree; i++)
     {
         res *= Num;
     }   
     return res;
 }
 
-System.Console.Write("Введите число: ");
-int a = PowNumber(UserInput());
-
-System.Console.WriteLine(a);
