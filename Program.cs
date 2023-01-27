@@ -1,58 +1,74 @@
-﻿// Console.Write("Введите номер задачи для проверки: ");
+﻿Console.Write("Введите номер задачи для проверки: ");
 
-// int a = UserInput();
+int a = UserInput();
 
-// switch (a)
-// {
-// case 19:
-//     Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
-//     a = UserInput();
-//     Polindrom(a);
-//     break;
+switch (a)
+{
+    case 19:
+        Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
+        a = UserInput();
+        Polindrom(a);
+        break;
 
-// case 21:
-//     int x1, y1, z1, x2, y2, z2;
-//     Console.Write("Введите значение X для 1 точки: ");
-//     x1 = UserInput();
-//     Console.Write("Введите значение Y для 1 точки: ");
-//     y1 = UserInput();
-//     Console.Write("Введите значение Z для 1 точки: ");
-//     z1 = UserInput();
-//     Console.Write("Введите значение X для 2 точки: ");
-//     x2 = UserInput();
-//     Console.Write("Введите значение Y для 2 точки: ");
-//     y2 = UserInput();
-//     Console.Write("Введите значение Z для 2 точки: ");
-//     z2 = UserInput();
+    case 21:
+        int x1, y1, z1, x2, y2, z2;
+        Console.Write("Введите значение X для 1 точки: ");
+        x1 = UserInput();
+        Console.Write("Введите значение Y для 1 точки: ");
+        y1 = UserInput();
+        Console.Write("Введите значение Z для 1 точки: ");
+        z1 = UserInput();
+        Console.Write("Введите значение X для 2 точки: ");
+        x2 = UserInput();
+        Console.Write("Введите значение Y для 2 точки: ");
+        y2 = UserInput();
+        Console.Write("Введите значение Z для 2 точки: ");
+        z2 = UserInput();
 
-//     Console.Write($"Расстояние между точками А ({x1},{y1},{z1}); B ({x2},{y2},{z2}) -> ");
-//     double res = Distance(x1, y1, z1, x2, y2, z2);
-//     Console.Write(res.ToString("0.##"));
-//     break;
+        Console.Write($"Расстояние между точками А ({x1},{y1},{z1}); B ({x2},{y2},{z2}) -> ");
+        double res = Distance(x1, y1, z1, x2, y2, z2);
+        Console.Write(res.ToString("0.##"));
+        break;
 
-// case 23:
-//     Console.Write("Введите число, а программа выведет таблицу кубов чисел от 1 до введённого вами: ");
-//     a = UserInput();
-//     Console.Write($"Таблица кубов числа {a}-> ");
-//     TryTable(a);
-//     break;
+    case 23:
+        Console.Write("Введите число, а программа выведет таблицу кубов чисел от 1 до введённого вами: ");
+        a = UserInput();
+        Console.Write($"Таблица кубов числа {a}-> ");
+        TryTable(a);
+        break;
 
-// case 25:
-// Console.Write("Введите число, которое будем возводить в степень: ");
-// int a = UserInput();
-// Console.Write($"Введите степерь в которую будем возводить число {a}: ");
-// int b = UserInput();
+    case 25:
+        Console.Write("Введите число, которое будем возводить в степень: ");
+        a = UserInput();
+        Console.Write($"Введите степерь в которую будем возводить число {a}: ");
+        int b = UserInput();
+        if (b < 0)
+        {
+            System.Console.WriteLine("Я ещё не достиг уровня отображения степени из отрицательного числа, но обязательно буду стараться.");
+            System.Console.WriteLine("Выполнение программы прервано.");
+            break;
+        }
 
-// Console.WriteLine($"Ответ: {a} ^ {b} = {PowNumber(a, b).ToString("### ### ### ###")}");
-// break;
+        Console.WriteLine($"Ответ: {a} ^ {b} = {PowNumber(a, b).ToString("### ### ### ###")}");
+        break;
 
-// default:
-//     Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21 или 23.");
-//     break;
-// }
+    case 27:
+        System.Console.Write("Введите число, что бы посчитать сумму чисел: ");
+        a = UserInput();
+        Console.Write($"Сумма цифр числа {a} ");
+        if (a < 0)
+            a *= (-1);
+
+        Console.Write($"-> {SumNumber(a)}");
+        break;
+
+    default:
+        Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21, 23 или 25.");
+        break;
+}
 
 
-//_________Funcs
+// _________Funcs
 
 int UserInput()
 {
@@ -107,13 +123,24 @@ void TryTable(int N)
 
 }
 
-int PowNumber (int Num, int Degree)
+int PowNumber(int Num, int Degree)
 {
     int res = 1;
     for (int i = 1; i <= Degree; i++)
     {
         res *= Num;
-    }   
+    }
     return res;
+}
+
+int SumNumber(int Num)
+{
+    double res = 0;
+    for (int i = 0; Num > 0; i++)
+    {
+        res += Num % 10;
+        Num /= 10;
+    }
+    return (int)res;
 }
 
