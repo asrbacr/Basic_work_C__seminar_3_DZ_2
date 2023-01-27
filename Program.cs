@@ -40,6 +40,12 @@ switch (a)
     case 25:
         Console.Write("Введите число, которое будем возводить в степень: ");
         a = UserInput();
+        if (a == 0)
+        {
+            System.Console.WriteLine("Если 0 возводить в степень, то будет получаться всегда 0.");
+            System.Console.WriteLine("Дальнейшее выполнение не целесообразно.");
+            break;
+        }
         Console.Write($"Введите степерь в которую будем возводить число {a}: ");
         int b = UserInput();
         if (b < 0)
