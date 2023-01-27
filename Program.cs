@@ -2,45 +2,45 @@
 
 int a = UserInput();
 
-switch (a)
-{
-    case 19:
-        Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
-        a = UserInput();
-        Polindrom(a);
-        break;
+// switch (a)
+// {
+// case 19:
+//     Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
+//     a = UserInput();
+//     Polindrom(a);
+//     break;
 
-    case 21:
-        int x1, y1, z1, x2, y2, z2;
-        Console.Write("Введите значение X для 1 точки: ");
-        x1 = UserInput();
-        Console.Write("Введите значение Y для 1 точки: ");
-        y1 = UserInput();
-        Console.Write("Введите значение Z для 1 точки: ");
-        z1 = UserInput();
-        Console.Write("Введите значение X для 2 точки: ");
-        x2 = UserInput();
-        Console.Write("Введите значение Y для 2 точки: ");
-        y2 = UserInput();
-        Console.Write("Введите значение Z для 2 точки: ");
-        z2 = UserInput();
+// case 21:
+//     int x1, y1, z1, x2, y2, z2;
+//     Console.Write("Введите значение X для 1 точки: ");
+//     x1 = UserInput();
+//     Console.Write("Введите значение Y для 1 точки: ");
+//     y1 = UserInput();
+//     Console.Write("Введите значение Z для 1 точки: ");
+//     z1 = UserInput();
+//     Console.Write("Введите значение X для 2 точки: ");
+//     x2 = UserInput();
+//     Console.Write("Введите значение Y для 2 точки: ");
+//     y2 = UserInput();
+//     Console.Write("Введите значение Z для 2 точки: ");
+//     z2 = UserInput();
 
-        Console.Write($"Расстояние между точками А ({x1},{y1},{z1}); B ({x2},{y2},{z2}) -> ");
-        double res = Distance(x1, y1, z1, x2, y2, z2);
-        Console.Write(res.ToString("0.##"));
-        break;
+//     Console.Write($"Расстояние между точками А ({x1},{y1},{z1}); B ({x2},{y2},{z2}) -> ");
+//     double res = Distance(x1, y1, z1, x2, y2, z2);
+//     Console.Write(res.ToString("0.##"));
+//     break;
 
-    case 23:
-        Console.Write("Введите число, а программа выведет таблицу кубов чисел от 1 до введённого вами: ");
-        a = UserInput();
-        Console.Write($"Таблица кубов числа {a}-> ");
-        TryTable(a);
-        break;
+// case 23:
+//     Console.Write("Введите число, а программа выведет таблицу кубов чисел от 1 до введённого вами: ");
+//     a = UserInput();
+//     Console.Write($"Таблица кубов числа {a}-> ");
+//     TryTable(a);
+//     break;
 
-    default:
-        Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21 или 23.");
-        break;
-}
+// default:
+//     Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21 или 23.");
+//     break;
+// }
 
 
 //_________Funcs
@@ -98,3 +98,17 @@ void TryTable(int N)
 
 }
 
+int PowNumber (int Num, int Degree)
+{
+    int res = 1;
+    for (int i = 1; i < Degree; i++)
+    {
+        res *= Num;
+    }   
+    return res;
+}
+
+System.Console.Write("Введите число: ");
+int a = PowNumber(UserInput());
+
+System.Console.WriteLine(a);
