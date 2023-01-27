@@ -89,12 +89,12 @@ void TryTable(int N)
     if (N < 0)
         N *= (-1);
 
-        while (count <= N)
-        {
-            Console.Write(count * count * count + ", ");
-            count++;
-        }
-        Console.Write(count * count * count);
+    while (count <= N - 1)
+    {
+        Console.Write(count * count * count + ", ");
+        count++;
+    }
+    Console.Write(count * count * count);
 
 }
 
