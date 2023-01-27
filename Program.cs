@@ -68,8 +68,44 @@ switch (a)
         Console.Write($"-> {SumNumber(a)}");
         break;
 
+    case 29:
+        System.Console.Write("Введите значение сколько элементов будет в массиве: ");
+        int N = UserInput();
+
+        if (N < 0)
+        {
+            System.Console.WriteLine("Нельзя чтобы значение было отрицательным");
+            break;
+        }
+        else if (N == 0)
+        {
+            System.Console.WriteLine("Ну тогда массив будет выглядеть []");
+            break;
+        }
+
+        int[] array = new int[N];
+
+        System.Console.Write("Введите нижнее значение массива: ");
+        int min = UserInput();
+        System.Console.Write("Введите верхнее значение массива: ");
+        int max = UserInput();
+        if (max < min)
+        {
+            int i = max;
+            max = min;
+            min = i;
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = new Random().Next(min, max + 1);
+        }
+
+        System.Console.Write($"[{String.Join(",", array)}]\n");
+        break;
+
     default:
-        Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21, 23 или 25.");
+        Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21, 23, 25, 27 или 29.");
         break;
 }
 
@@ -149,4 +185,8 @@ int SumNumber(int Num)
     }
     return (int)res;
 }
+
+
+
+
 
