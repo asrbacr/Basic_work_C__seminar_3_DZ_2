@@ -118,104 +118,126 @@ int UserInput()
     while (!int.TryParse(Console.ReadLine(), out number))
         Console.Write("Вы ввели не число. Повторите ввод: ");
 
-        return number;
+    return number;
+}
+
+// void Polindrom(int a)
+// {
+//     if (a < 0)
+//         a *= (-1);
+
+//     if (!(a > 9999 && a < 100000))
+//     {
+//         Console.WriteLine("Придётся выбрать задачу заново, т.к. число не пятизначное");
+//     }
+//     else
+//     {
+//         if (a % 10 == a / 10000 && (a / 1000) % 10 == (a % 100) / 10)
+//         {
+//             {
+//                 Console.WriteLine($"да, введёное число {a}, является пониндромом.");
+//             }
+//         }
+//         else
+//         {
+//             Console.WriteLine($"Нет, введёное число {a}, не является пониндромом.");
+//         }
+//     }
+// }
+
+// double Distance(double x1, double y1, double z1, double x2, double y2, double z2)
+// {
+//     return Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2) + Math.Pow((z2 - z1), 2));
+// }
+
+// void TryTable(int N)
+// {
+//     int count = 1;
+//     if (N < 0)
+//         N *= (-1);
+
+//     while (count <= N - 1)
+//     {
+//         Console.Write(count * count * count + ", ");
+//         count++;
+//     }
+//     Console.Write(count * count * count);
+
+// }
+
+// int PowNumber(int Num, int Degree)
+// {
+//     int res = 1;
+//     for (int i = 1; i <= Degree; i++)
+//     {
+//         res *= Num;
+//     }
+//     return res;
+// }
+
+// int SumNumber(int Num)
+// {
+//     double res = 0;
+//     for (int i = 0; Num > 0; i++)
+//     {
+//         res += Num % 10;
+//         Num /= 10;
+//     }
+//     return (int)res;
+// }
+
+//______34
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+
+System.Console.Write("Сколько элементов будет в массиве: ");
+int a = UserInput();
+int[] GenArray(int a)
+{
+    int[] RandomArray = new int[a];
+    // int count = 0;
+    for (int i = 0; i < RandomArray.Length; i++)
+    {
+        RandomArray[i] = new Random().Next(100, 1000);
+        // if (RandomArray[i] % 2 == 0)
+        // {
+        //     count++;
+        // }
     }
+    return RandomArray;
+}
+GenArray(a);
 
-    // void Polindrom(int a)
-    // {
-    //     if (a < 0)
-    //         a *= (-1);
+int FuncSerch(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
+        {
+            count++;
+        }
+    }
+    return count;
+}
 
-    //     if (!(a > 9999 && a < 100000))
-    //     {
-    //         Console.WriteLine("Придётся выбрать задачу заново, т.к. число не пятизначное");
-    //     }
-    //     else
-    //     {
-    //         if (a % 10 == a / 10000 && (a / 1000) % 10 == (a % 100) / 10)
-    //         {
-    //             {
-    //                 Console.WriteLine($"да, введёное число {a}, является пониндромом.");
-    //             }
-    //         }
-    //         else
-    //         {
-    //             Console.WriteLine($"Нет, введёное число {a}, не является пониндромом.");
-    //         }
-    //     }
-    // }
+int[] arrayNew = GenArray(a);
+int resultSerch = FuncSerch(arrayNew);
+Console.Write($"В массиве [");
+PrintArray(arrayNew);
+System.Console.Write($"], четный элементов {resultSerch}");
 
-    // double Distance(double x1, double y1, double z1, double x2, double y2, double z2)
-    // {
-    //     return Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2) + Math.Pow((z2 - z1), 2));
-    // }
+void PrintArray(int[] arr)
+{
+    int count = arr.Length;
 
-    // void TryTable(int N)
-    // {
-    //     int count = 1;
-    //     if (N < 0)
-    //         N *= (-1);
+    for (int i = 0; i < count - 1; i++)
+    {
+        Console.Write($"{arr[i]}, ");
+    }
+    System.Console.Write(arr[arr.Length - 1]);
+    // Console.WriteLine();
+}
 
-    //     while (count <= N - 1)
-    //     {
-    //         Console.Write(count * count * count + ", ");
-    //         count++;
-    //     }
-    //     Console.Write(count * count * count);
+// PrintArray(GenArray(a));
 
-    // }
-
-    // int PowNumber(int Num, int Degree)
-    // {
-    //     int res = 1;
-    //     for (int i = 1; i <= Degree; i++)
-    //     {
-    //         res *= Num;
-    //     }
-    //     return res;
-    // }
-
-    // int SumNumber(int Num)
-    // {
-    //     double res = 0;
-    //     for (int i = 0; Num > 0; i++)
-    //     {
-    //         res += Num % 10;
-    //         Num /= 10;
-    //     }
-    //     return (int)res;
-    // }
-
-    //______34
-    // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-    // Напишите программу, которая покажет количество чётных чисел в массиве.
-
-/* код ↓ не работает
-            int a = UserInput();
-            int[] RandomArray = new int[a];
-            {
-                int count = 0;
-                for (int i = 0; i < RandomArray.Length; i++)
-                {
-                    RandomArray[i] = new Random().Next(100, 1000);
-                    if (RandomArray[i] % 2 == 0)
-                    {
-                        count++;
-                    }
-                }
-                return count;
-            }
-
-            void PrintArray(int[] arr)
-            {
-                int count = arr.Length;
-
-                for (int i = 0; i < count; i++)
-                {
-                    Console.Write($"{arr[i]} ");
-                }
-                Console.WriteLine();
-            }
-
-            PrintArray(a);
-___ код ↑ не работает*/
