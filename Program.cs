@@ -3,142 +3,142 @@
 int a = UserInput();
 
 switch (a)
-{
-    /*   case 19:
-           Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
-           a = UserInput();
-           Polindrom(a);
+{ }
+/*   case 19:
+       Console.Write("Введите пятизначное число для проверки является ли оно палиндромом: ");
+       a = UserInput();
+       Polindrom(a);
+       break;
+
+   case 21:
+       int x1, y1, z1, x2, y2, z2;
+       Console.Write("Введите значение X для 1 точки: ");
+       x1 = UserInput();
+       Console.Write("Введите значение Y для 1 точки: ");
+       y1 = UserInput();
+       Console.Write("Введите значение Z для 1 точки: ");
+       z1 = UserInput();
+       Console.Write("Введите значение X для 2 точки: ");
+       x2 = UserInput();
+       Console.Write("Введите значение Y для 2 точки: ");
+       y2 = UserInput();
+       Console.Write("Введите значение Z для 2 точки: ");
+       z2 = UserInput();
+
+       Console.Write($"Расстояние между точками А ({x1},{y1},{z1}); B ({x2},{y2},{z2}) -> ");
+       double res = Distance(x1, y1, z1, x2, y2, z2);
+       Console.Write(res.ToString("0.##"));
+       break;
+
+   case 23:
+       Console.Write("Введите число, а программа выведет таблицу кубов чисел от 1 до введённого вами: ");
+       a = UserInput();
+       Console.Write($"Таблица кубов числа {a}-> ");
+       TryTable(a);
+       break;
+
+   case 25:
+       Console.Write("Введите число, которое будем возводить в степень: ");
+       a = UserInput();
+       if (a == 0)
+       {
+           System.Console.WriteLine("Если 0 возводить в степень, то будет получаться всегда 0.");
+           System.Console.WriteLine("Дальнейшее выполнение не целесообразно.");
            break;
-
-       case 21:
-           int x1, y1, z1, x2, y2, z2;
-           Console.Write("Введите значение X для 1 точки: ");
-           x1 = UserInput();
-           Console.Write("Введите значение Y для 1 точки: ");
-           y1 = UserInput();
-           Console.Write("Введите значение Z для 1 точки: ");
-           z1 = UserInput();
-           Console.Write("Введите значение X для 2 точки: ");
-           x2 = UserInput();
-           Console.Write("Введите значение Y для 2 точки: ");
-           y2 = UserInput();
-           Console.Write("Введите значение Z для 2 точки: ");
-           z2 = UserInput();
-
-           Console.Write($"Расстояние между точками А ({x1},{y1},{z1}); B ({x2},{y2},{z2}) -> ");
-           double res = Distance(x1, y1, z1, x2, y2, z2);
-           Console.Write(res.ToString("0.##"));
+       }
+       Console.Write($"Введите степерь в которую будем возводить число {a}: ");
+       int b = UserInput();
+       if (b < 0)
+       {
+           System.Console.WriteLine("Я ещё не достиг уровня отображения степени из отрицательного числа, но обязательно буду стараться.");
+           System.Console.WriteLine("Выполнение программы прервано.");
            break;
+       }
 
-       case 23:
-           Console.Write("Введите число, а программа выведет таблицу кубов чисел от 1 до введённого вами: ");
-           a = UserInput();
-           Console.Write($"Таблица кубов числа {a}-> ");
-           TryTable(a);
+       Console.WriteLine($"Ответ: {a} ^ {b} = {PowNumber(a, b).ToString("### ### ### ###")}");
+       break;
+
+   case 27:
+       System.Console.Write("Введите число, что бы посчитать сумму чисел: ");
+       a = UserInput();
+       Console.Write($"Сумма цифр числа {a} ");
+       if (a < 0)
+           a *= (-1);
+
+       Console.Write($"-> {SumNumber(a)}");
+       break;
+
+   case 29:
+       System.Console.Write("Введите значение сколько элементов будет в массиве: ");
+       int N = UserInput();
+
+       if (N < 0)
+       {
+           System.Console.WriteLine("Нельзя чтобы значение было отрицательным");
            break;
-
-       case 25:
-           Console.Write("Введите число, которое будем возводить в степень: ");
-           a = UserInput();
-           if (a == 0)
-           {
-               System.Console.WriteLine("Если 0 возводить в степень, то будет получаться всегда 0.");
-               System.Console.WriteLine("Дальнейшее выполнение не целесообразно.");
-               break;
-           }
-           Console.Write($"Введите степерь в которую будем возводить число {a}: ");
-           int b = UserInput();
-           if (b < 0)
-           {
-               System.Console.WriteLine("Я ещё не достиг уровня отображения степени из отрицательного числа, но обязательно буду стараться.");
-               System.Console.WriteLine("Выполнение программы прервано.");
-               break;
-           }
-
-           Console.WriteLine($"Ответ: {a} ^ {b} = {PowNumber(a, b).ToString("### ### ### ###")}");
+       }
+       else if (N == 0)
+       {
+           System.Console.WriteLine("Ну тогда массив будет выглядеть []");
            break;
+       }
 
-       case 27:
-           System.Console.Write("Введите число, что бы посчитать сумму чисел: ");
-           a = UserInput();
-           Console.Write($"Сумма цифр числа {a} ");
-           if (a < 0)
-               a *= (-1);
+       int[] array = new int[N];
 
-           Console.Write($"-> {SumNumber(a)}");
-           break;
+       System.Console.Write("Введите нижнее значение массива: ");
+       int min = UserInput();
+       System.Console.Write("Введите верхнее значение массива: ");
+       int max = UserInput();
+       if (max < min)
+       {
+           int i = max;
+           max = min;
+           min = i;
+       }
 
-       case 29:
-           System.Console.Write("Введите значение сколько элементов будет в массиве: ");
-           int N = UserInput();
+       for (int i = 0; i < array.Length; i++)
+       {
+           array[i] = new Random().Next(min, max + 1);
+       }
 
-           if (N < 0)
-           {
-               System.Console.WriteLine("Нельзя чтобы значение было отрицательным");
-               break;
-           }
-           else if (N == 0)
-           {
-               System.Console.WriteLine("Ну тогда массив будет выглядеть []");
-               break;
-           }
+       System.Console.Write($"[{String.Join(",", array)}]\n");
+       break; 
+*/
+/* case 34:
+     System.Console.WriteLine("Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.");
+     System.Console.Write("Сколько элементов будет в массиве: ");
+     a = UserInput();
+     int[] arrayNew = GenArray(a, 100, 999); //тут макс указано 999, потому что в функции идёт max+1
+     int resultSerch = FuncSerch(arrayNew);
+     Console.Write($"В массиве [");
+     PrintArray(arrayNew);
+     System.Console.Write($"], четный элементов -> {resultSerch}");
+     break;
 
-           int[] array = new int[N];
-
-           System.Console.Write("Введите нижнее значение массива: ");
-           int min = UserInput();
-           System.Console.Write("Введите верхнее значение массива: ");
-           int max = UserInput();
-           if (max < min)
-           {
-               int i = max;
-               max = min;
-               min = i;
-           }
-
-           for (int i = 0; i < array.Length; i++)
-           {
-               array[i] = new Random().Next(min, max + 1);
-           }
-
-           System.Console.Write($"[{String.Join(",", array)}]\n");
-           break; 
-    */
-   /* case 34:
-        System.Console.WriteLine("Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.");
-        System.Console.Write("Сколько элементов будет в массиве: ");
-        a = UserInput();
-        int[] arrayNew = GenArray(a, 100, 999); //тут макс указано 999, потому что в функции идёт max+1
-        int resultSerch = FuncSerch(arrayNew);
-        Console.Write($"В массиве [");
-        PrintArray(arrayNew);
-        System.Console.Write($"], четный элементов -> {resultSerch}");
-        break;
-
-    case 36:
-        System.Console.WriteLine("Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.");
-        System.Console.Write("Сколько элементов будет в массиве: ");
-        a = UserInput();
-        System.Console.Write("Введите минимальное значение массива: ");
-        int min = UserInput();
-        System.Console.Write("Введите максимальное значение массива: ");
-        int max = UserInput();
+ case 36:
+     System.Console.WriteLine("Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.");
+     System.Console.Write("Сколько элементов будет в массиве: ");
+     a = UserInput();
+     System.Console.Write("Введите минимальное значение массива: ");
+     int min = UserInput();
+     System.Console.Write("Введите максимальное значение массива: ");
+     int max = UserInput();
 
 
-        arrayNew = GenArray(a, min, max);
-        Console.Write($"В массиве [");
-        PrintArray(arrayNew);
-        System.Console.Write($"], сумма элементов, стоящих на нечётных позициях -> {FuncSummOdd(arrayNew)}");
-        break;
+     arrayNew = GenArray(a, min, max);
+     Console.Write($"В массиве [");
+     PrintArray(arrayNew);
+     System.Console.Write($"], сумма элементов, стоящих на нечётных позициях -> {FuncSummOdd(arrayNew)}");
+     break;
 
 
-    default:
-        //Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21, 23, 25, 27 или 29.");
-        Console.WriteLine("Можно выбрать только № 34, 36 или 38");
-        break;
+ default:
+     //Console.WriteLine("Программа по выбору находится ещё в разработку, поэтому можно выбрать только № 19, 21, 23, 25, 27 или 29.");
+     Console.WriteLine("Можно выбрать только № 34, 36 или 38");
+     break;
 }
 
-
+*/
 // _________Funcs
 
 int UserInput()
@@ -260,7 +260,7 @@ void PrintArray(int[] arr)
     System.Console.Write(arr[arr.Length - 1]);
     // Console.WriteLine();
 }
- 
+
 int FuncSummOdd(int[] array)
 {
     int res = 0;
@@ -270,5 +270,54 @@ int FuncSummOdd(int[] array)
     }
     return res;
 }
-*/
+
+//___________ 38
+
+System.Console.Write("Сколько элементов будет в массиве: ");
+a = UserInput();
+System.Console.Write("Введите максимальное значение массива: ");
+int max = UserInput();
+if (max < 0)
+{
+    System.Console.WriteLine("По условию задачи массив должен состоять из вещественных чисел");
+    //break;
+}
+int[] arrayNew = GenArray(a, 1, max);
+
+int MinNumber(int[] array)
+{
+    int res = -1;
+
+
+
+    return res;
+}
+
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        int maxPositon = i;
+
+
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] > array[minPosition])
+                minPosition = j;
+            if (array[j] < array[maxPositon])
+                maxPositon = j;
+        }
+        
+
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+
+PrintArray(arrayNew);
+System.Console.WriteLine();
+SelectionSort(arrayNew);
+PrintArray(arrayNew);
+
 
